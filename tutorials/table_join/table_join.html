@@ -10,49 +10,49 @@
 <h2><span style="font-size:16pt;font-family:Arial,sans-serif;">Workflow</span></h2>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">1. We   the input data   the server using QGIS. First,  to  server using the PostgreSQL option in the browser panel. Right- on PostgreSQL &ndash;&gt;  Connection. You can  this if already connected  the server.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image1" width="657" height="485"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image1.png" width="657" height="485"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">2.  will see the dialogue where you need   in the details and  to connect  the server. Fill  the   and  &lsquo;Ok&rsquo; to connect.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image2" width="462" height="768"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image2.png" width="462" height="768"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">3. Next  is  upload the  table and   shapefile to the database.  will add the population CSV  the     correctly and  the field type.  on the &lsquo;Data Source Manager&rsquo;  and   the &lsquo;Delimited Text&rsquo; option  we are adding the CSV file.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image3" width="657" height="476"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image3.png" width="657" height="476"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">4. Browse to the file and set the layer  as &lsquo;california_population&rsquo; to simplify. Our CSV   two headers   the first one  irrelevant. Under the &lsquo;Record and Fields Options&rsquo; we will choose 1 column to discard from the top.  on &lsquo;Add&rsquo; to see the &lsquo;california_population layer loaded in QGIS.&rsquo;</span></p>
 <p><br></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image4" width="657" height="550"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image4.png" width="657" height="550"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">5. We have over 450 fields   table. We   the total estimated population  some   the  information. Let&rsquo;s delete fields that   required.   Processing -&gt; Toolbox  search for &lsquo; Fields&rsquo; tool.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image5" width="686" height="496"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image5.png" width="686" height="496"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">6.   &lsquo;california_population&rsquo;  as Input Layer and click on  &hellip; button  field selection.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image6" width="657" height="528"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image6.png" width="657" height="528"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">7. Select the top three fields  are &lsquo;Geography&rsquo;, &lsquo; Area Name&rsquo; and &lsquo;Estimate!!Total!!Total Population&rsquo; and click &lsquo;Ok&rsquo;.</span></p>
 <p><br></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image7" width="657" height="523"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image7.png" width="657" height="523"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">8.   Output  field empty and click the &lsquo;Run&rsquo; button  generate  temporary  with  fields.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image8" width="657" height="524"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image8.png" width="657" height="524"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">9. Now,   add   to the postgres database. Go to Database - &gt; DB Manager.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image9" width="657" height="526"></span></span><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp; &nbsp; &nbsp;</span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image9.png" width="657" height="526"></span></span><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp; &nbsp; &nbsp;</span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">10.  the DB Manager window, you will  a  provider and the  server connection.  has the default &lsquo;public&rsquo; schema. We will upload  tables to the schema. Select the schema  click on &lsquo;Import Layer/File&rsquo; to upload the &lsquo;Retained Fields&rsquo; table.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image10" width="657" height="494"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image10.png" width="657" height="494"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">11. You will   window to upload the layer where you will  the input layer, give the  name, create an &lsquo;id&rsquo;  as primary key. Check the  to convert field names   and click &lsquo;Ok&rsquo;.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image11" width="574" height="768"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image11.png" width="574" height="768"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">12.    the message when it   successfully.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image12" width="506" height="268"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image12.png" width="506" height="268"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">13.  step is to  the California tracts shapefile on the  database.  has  spatial information and   a postGIS extension  work  the spatial data on postgres.&nbsp;</span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;"> the    to &lsquo; Window&rsquo;.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image13" width="657" height="574"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image13.png" width="657" height="574"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;14. In   window,   following command  add  postGIS   your  server. Click   &lsquo;Execute&rsquo;  to add the extension.&nbsp;</span></p>
 <p><span style="font-size:11pt;font-family:'Courier New',monospace;">&lsquo;CREATE EXTENSION postgis&rsquo;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image14" width="657" height="447"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image14.png" width="657" height="447"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">15. Now we are ready to upload the &lsquo;tl_2022_06_tract.shp&rsquo; to  server. We  directly add  to the server using &lsquo;DB Manager&rsquo;. Click on &lsquo;Import layer/file&rsquo; and browse to  &lsquo;tl_2022_06_tract.shp&rsquo; layer  give the name &lsquo;california_2022_tract&rsquo;. Let&rsquo;s   for  a  key and &nbsp;a geometry column.   check  option to convert fields  lowercase and add   to the features for faster processing.  &lsquo;Ok&rsquo; to upload.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image15" width="579" height="768"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image15.png" width="579" height="768"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">16.   see the &lsquo; was Successful&rsquo; message as soon as  gets imported to the database.  can   tables   &lsquo;public&rsquo; schema.  the    schema and switch to the &lsquo;Table&rsquo;  to  the table. Similarly you can switch to the &lsquo;Preview&rsquo;  to  the   the shapefile.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16" width="657" height="361"></span></span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16(2)" width="657" height="418"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16.png" width="657" height="361"></span></span></p>
+<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16(2).png" width="657" height="418"></span></span></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">17. We  run    the total population column  the  shapefile  a common geoid. The &lsquo;geoid&rsquo; field in the &lsquo;california_2022_tracts&rsquo; has    the   the &lsquo;geography&rsquo; field in the &lsquo;california_population&rsquo;    long id  tracts  the  from which we can get   11 characters to match with the values in &lsquo;geoid&rsquo;   the tracts table. We will apply queries given below to  a  named &lsquo;geoid&rsquo; in  population table   a  unique field.</span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;"> a new column &lsquo;geoid_pop&rsquo; to the table &lsquo;california_population&rsquo;.</span></p>
@@ -64,10 +64,10 @@
 <p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM CHAR_LENGTH(&quot;geography&quot;) - 10</span></p>
 <p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FOR 11);</span></p>
 <p><br></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image17" width="657" height="373"></span></span></p>
+<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image17.png" width="657" height="373"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">18. You will   new  &lsquo;geoid_pop&rsquo; is  in  &lsquo;california_population&rsquo; table.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image18" width="724" height="550"></span></span></p>
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image18.png" width="724" height="550"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">19. Now, we will create a   named &lsquo;california_tract_with_pop &rsquo; by  population information from california_ table to the  table. Execute the query as  see below and refresh   the new table added   &lsquo;public&rsquo; schema.</span></p>
 <p><br></p>
@@ -80,13 +80,12 @@
 <p><span style="font-size:11pt;font-family:'Courier New',monospace;">FROM california_2022_tract t1</span></p>
 <p><span style="font-size:11pt;font-family:'Courier New',monospace;">JOIN california_population t2 ON t1. = t2.geoid_pop</span></p>
 <p><br></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image19" width="657" height="515"></span></span></p>
+<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image19.png" width="657" height="515"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">20.  can view the table and right  to  the option to add it to the canvas.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image20" width="657" height="374"></span></span></p>
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image20.png" width="657" height="374"></span></span></p>
 <p><br></p>
 <p><span style="font-size:11pt;font-family:Arial,sans-serif;">21. The   has  and total population for all tracts which   used for further analysis   such as creating  density map. The   to create   QGIS is available at -&nbsp;</span><a href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html"><u><span style="color:#1155cc;font-size:11pt;font-family:Arial,sans-serif;">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</span></u></a><span style="font-size:11pt;font-family:Arial,sans-serif;">.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image21" width="657" height="484"></span></span></p>
+<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image21.png" width="657" height="484"></span></span></p>
 <p><br></p>
 <p><br></p>
-<div style="color: red; font-size: 12px; width: 600px; margin: 0 auto; text-align: center;">Created with <a href="https://wordtohtml.net/">WordToHTML.net</a> trial.</div>
