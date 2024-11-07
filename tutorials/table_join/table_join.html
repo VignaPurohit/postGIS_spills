@@ -1,91 +1,322 @@
-<h1><span style="font-size:20pt;font-family:Arial,sans-serif;">A Step-by-Step  to Upload and Update PostgreSQL Tables Using QGIS</span></h1>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">In this tutorial,  will see a   Join  using postgreSQL. This is  when  need to add some   the shapefile  from other tabular data. For this workflow, we will prepare the data to create a population density map for the  2022 for California. We  use a shapefile  census tracts  California and a population  table  the US Bureau.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"> can get more information on downloading the  from the tutorial which &nbsp;demonstrates  same using QGIS tools. -&nbsp;</span><a href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html"><u><span style="color:#1155cc;font-size:11pt;font-family:Arial,sans-serif;">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</span></u></a><span style="font-size:11pt;font-family:Arial,sans-serif;">.&nbsp;</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">You can download a copy of both the datasets below.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">1&nbsp;</span><a href="https://github.com/VignaPurohit/postgreSQL_spills/raw/refs/heads/main/tutorials/table_join/data/ACSST5Y2022.S0101_2024-09-16T032248.zip"><u><span style="color:#1155cc;font-size:11pt;font-family:Arial,sans-serif;">ACSST5Y2022.S0101_2024-09-16T032248.zip</span></u></a></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">2&nbsp;</span><a href="https://github.com/VignaPurohit/postgreSQL_spills/raw/refs/heads/main/tutorials/table_join/data/tl_2022_06_tract.zip"><u><span style="color:#1155cc;font-size:11pt;font-family:Arial,sans-serif;">tl_2022_06_tract.zip</span></u></a></p>
-<p><br></p>
-<h2><span style="font-size:16pt;font-family:Arial,sans-serif;">Workflow</span></h2>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">1. We   the input data   the server using QGIS. First,  to  server using the PostgreSQL option in the browser panel. Right- on PostgreSQL &ndash;&gt;  Connection. You can  this if already connected  the server.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image1.png" width="657" height="485"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">2.  will see the dialogue where you need   in the details and  to connect  the server. Fill  the   and  &lsquo;Ok&rsquo; to connect.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image2.png" width="462" height="768"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">3. Next  is  upload the  table and   shapefile to the database.  will add the population CSV  the     correctly and  the field type.  on the &lsquo;Data Source Manager&rsquo;  and   the &lsquo;Delimited Text&rsquo; option  we are adding the CSV file.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image3.png" width="657" height="476"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">4. Browse to the file and set the layer  as &lsquo;california_population&rsquo; to simplify. Our CSV   two headers   the first one  irrelevant. Under the &lsquo;Record and Fields Options&rsquo; we will choose 1 column to discard from the top.  on &lsquo;Add&rsquo; to see the &lsquo;california_population layer loaded in QGIS.&rsquo;</span></p>
-<p><br></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image4.png" width="657" height="550"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">5. We have over 450 fields   table. We   the total estimated population  some   the  information. Let&rsquo;s delete fields that   required.   Processing -&gt; Toolbox  search for &lsquo; Fields&rsquo; tool.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image5.png" width="686" height="496"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">6.   &lsquo;california_population&rsquo;  as Input Layer and click on  &hellip; button  field selection.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image6.png" width="657" height="528"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">7. Select the top three fields  are &lsquo;Geography&rsquo;, &lsquo; Area Name&rsquo; and &lsquo;Estimate!!Total!!Total Population&rsquo; and click &lsquo;Ok&rsquo;.</span></p>
-<p><br></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image7.png" width="657" height="523"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">8.   Output  field empty and click the &lsquo;Run&rsquo; button  generate  temporary  with  fields.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image8.png" width="657" height="524"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">9. Now,   add   to the postgres database. Go to Database - &gt; DB Manager.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image9.png" width="657" height="526"></span></span><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp; &nbsp; &nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">10.  the DB Manager window, you will  a  provider and the  server connection.  has the default &lsquo;public&rsquo; schema. We will upload  tables to the schema. Select the schema  click on &lsquo;Import Layer/File&rsquo; to upload the &lsquo;Retained Fields&rsquo; table.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image10.png" width="657" height="494"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">11. You will   window to upload the layer where you will  the input layer, give the  name, create an &lsquo;id&rsquo;  as primary key. Check the  to convert field names   and click &lsquo;Ok&rsquo;.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image11.png" width="574" height="768"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">12.    the message when it   successfully.&nbsp;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image12.png" width="506" height="268"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">13.  step is to  the California tracts shapefile on the  database.  has  spatial information and   a postGIS extension  work  the spatial data on postgres.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"> the    to &lsquo; Window&rsquo;.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image13.png" width="657" height="574"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">&nbsp;14. In   window,   following command  add  postGIS   your  server. Click   &lsquo;Execute&rsquo;  to add the extension.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">&lsquo;CREATE EXTENSION postgis&rsquo;</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image14.png" width="657" height="447"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">15. Now we are ready to upload the &lsquo;tl_2022_06_tract.shp&rsquo; to  server. We  directly add  to the server using &lsquo;DB Manager&rsquo;. Click on &lsquo;Import layer/file&rsquo; and browse to  &lsquo;tl_2022_06_tract.shp&rsquo; layer  give the name &lsquo;california_2022_tract&rsquo;. Let&rsquo;s   for  a  key and &nbsp;a geometry column.   check  option to convert fields  lowercase and add   to the features for faster processing.  &lsquo;Ok&rsquo; to upload.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image15.png" width="579" height="768"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">16.   see the &lsquo; was Successful&rsquo; message as soon as  gets imported to the database.  can   tables   &lsquo;public&rsquo; schema.  the    schema and switch to the &lsquo;Table&rsquo;  to  the table. Similarly you can switch to the &lsquo;Preview&rsquo;  to  the   the shapefile.</span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16.png" width="657" height="361"></span></span></p>
-<p style="text-align: center;"><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image16(2).png" width="657" height="418"></span></span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">17. We  run    the total population column  the  shapefile  a common geoid. The &lsquo;geoid&rsquo; field in the &lsquo;california_2022_tracts&rsquo; has    the   the &lsquo;geography&rsquo; field in the &lsquo;california_population&rsquo;    long id  tracts  the  from which we can get   11 characters to match with the values in &lsquo;geoid&rsquo;   the tracts table. We will apply queries given below to  a  named &lsquo;geoid&rsquo; in  population table   a  unique field.</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"> a new column &lsquo;geoid_pop&rsquo; to the table &lsquo;california_population&rsquo;.</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">ALTER  california_population ADD  geoid_pop VARCHAR(20);</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"> the &lsquo;geoid_pop&rsquo; column     characters of the &lsquo;geography&rsquo; field starting from 10th position.</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"> california_population</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">SET geoid_pop = SUBSTRING(&quot;geography&quot;</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM CHAR_LENGTH(&quot;geography&quot;) - 10</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FOR 11);</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image17.png" width="657" height="373"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">18. You will   new  &lsquo;geoid_pop&rsquo; is  in  &lsquo;california_population&rsquo; table.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image18.png" width="724" height="550"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">19. Now, we will create a   named &lsquo;california_tract_with_pop &rsquo; by  population information from california_ table to the  table. Execute the query as  see below and refresh   the new table added   &lsquo;public&rsquo; schema.</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"> query selects   columns  the &lsquo;california_2022_tract&rsquo; table and selects &quot;geographic area name&quot; and &quot;estimate!!total!!total population&quot; columns from the &lsquo;california_population&rsquo; table. We have  t1 and t2   input tables   in  the columns.</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">CREATE  california_tract_with_pop AS</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"> t1.,</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp;t2.&quot;geographic  name&quot;,</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">&nbsp; &nbsp; &nbsp; &nbsp;t2.&quot;estimate!!total!!total population&quot;</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">FROM california_2022_tract t1</span></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;">JOIN california_population t2 ON t1. = t2.geoid_pop</span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:'Courier New',monospace;"><span style="border:1pt solid #000000;"><img src="images/image19.png" width="657" height="515"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">20.  can view the table and right  to  the option to add it to the canvas.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image20.png" width="657" height="374"></span></span></p>
-<p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">21. The   has  and total population for all tracts which   used for further analysis   such as creating  density map. The   to create   QGIS is available at -&nbsp;</span><a href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html"><u><span style="color:#1155cc;font-size:11pt;font-family:Arial,sans-serif;">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</span></u></a><span style="font-size:11pt;font-family:Arial,sans-serif;">.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;"><span style="border:1pt solid #000000;"><img src="images/image21.png" width="657" height="484"></span></span></p>
-<p><br></p>
-<p><br></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Step-by-Step Guide to Upload and Update PostgreSQL Tables Using QGIS</title>
+    <style>
+        /* Base styling for body */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f8;
+        }
+
+        /* Container styling with reduced max-width and padding adjustments */
+        .container {
+            max-width: 100ch; /* Reduced width for smaller margins */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Styling for pre-formatted text blocks */
+        pre {
+            background-color: #f5f5f5;
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* Styling for inline code elements */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #2d2d2d;
+            font-size: 14px;
+        }
+
+        /* Center aligned images within paragraphs */
+        p[style="text-align: center"] img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Heading styles */
+        h1, h2 {
+            color: #2c3e50;
+            margin-top: 1em;
+        }
+
+        /* Responsive adjustments for medium-sized screens */
+        @media (max-width: 800px) {
+            .container {
+                max-width: 85%; /* Wider on medium screens */
+                padding: 10px 15px; /* Reduced padding */
+            }
+        }
+
+        /* Responsive adjustments for small screens */
+        @media (max-width: 600px) {
+            .container {
+                max-width: 95%; /* Almost full-width on small screens */
+                padding: 5px 10px; /* Minimal padding */
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+<h1>A Step-by-Step Guide to Upload and Update PostgreSQL Tables Using QGIS</h1>
+<p>
+In this tutorial, you will see a simple Table Join operation using postgreSQL.
+This is required when you need to add some information to the shapefile
+attribute from other tabular data. For this workflow, we will prepare the data
+to create a population density map for the year 2022 for California. We will use
+a shapefile of census tracts for California and a population data table from the
+US Bureau.
+</p>
+<p>
+You can get more information on downloading the dataset from the tutorial which
+demonstrates the same using QGIS tools. - <a
+href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</a>.
+</p>
+<p>
+You can download a copy of both the datasets below.
+</p>
+<p>
+1 <a
+href="https://github.com/VignaPurohit/postgreSQL_spills/raw/refs/heads/main/tutorials/table_join/data/ACSST5Y2022.S0101_2024-09-16T032248.zip">ACSST5Y2022.S0101_2024-09-16T032248.zip</a>
+</p>
+<p>
+2 <a
+href="https://github.com/VignaPurohit/postgreSQL_spills/raw/refs/heads/main/tutorials/table_join/data/tl_2022_06_tract.zip">tl_2022_06_tract.zip</a>
+</p>
+<h2>Workflow</h2>
+<p>
+1. We will upload the input data files to the server using QGIS. First, connect
+to the server using the PostgreSQL option in the browser panel. Right-click on
+PostgreSQL –> New Connection. You can skip this if already connected to the
+server.
+</p>
+<p style="text-align: center">
+<img src="images/image1.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+2. You will see the dialogue where you need to fill in the details and
+credentials to connect to the server. Fill all the required details and click
+‘Ok’ to connect.
+</p>
+<p style="text-align: center">
+<img src="images/image2.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+3. Next step is to upload the population table and the tracts shapefile to the
+database. We will add the population CSV to the QGIS to format it correctly and
+detect the field type. Click on the ‘Data Source Manager’ icon and look for the
+‘Delimited Text’ option as we are adding the CSV file.
+</p>
+<p style="text-align: center">
+<img src="images/image3.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+4. Browse to the file and set the layer name as ‘california_population’ to
+simplify. Our CSV data has two headers columns where the first one looks
+irrelevant. Under the ‘Record and Fields Options’ we will choose 1 column to
+discard from the top. Click on ‘Add’ to see the ‘california_population layer
+loaded in QGIS.’
+</p>
+<p style="text-align: center">
+<img src="images/image4.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+5. We have over 450 fields in the table. We just need the total estimated
+population and some fields with the location information. Let’s delete fields
+that are not required. Go to Processing -> Toolbox and search for ‘Retain
+Fields’ tool.
+</p>
+<p style="text-align: center">
+<img src="images/image5.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+6. Select the ‘california_population’ table as Input Layer and click on the …
+button for field selection.
+</p>
+<p style="text-align: center">
+<img src="images/image6.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+7. Select the top three fields which are ‘Geography’, ‘Geographic Area Name’ and
+‘Estimate!!Total!!Total Population’ and click ‘Ok’.
+</p>
+<p style="text-align: center">
+<img src="images/image7.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+8. Keep the Output Layer field empty and click the ‘Run’ button to generate the
+temporary output with required fields.
+</p>
+<p style="text-align: center">
+<img src="images/image8.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+9. Now, we will add this table to the postgres database. Go to Database - > DB
+Manager.
+</p>
+<p style="text-align: center">
+<img src="images/image9.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+</p>
+<p>
+10. In the DB Manager window, you will see a postGIS provider and the postgres
+server connection. It has the default ‘public’ schema. We will upload our tables
+to the schema. Select the schema and click on ‘Import Layer/File’ to upload the
+‘Retained Fields’ table.
+</p>
+<p style="text-align: center">
+<img src="images/image10.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+11. You will see the window to upload the layer where you will select the input
+layer, give the table name, create an ‘id’ field as primary key. Check the box
+to convert field names to lowercase and click ‘Ok’.
+</p>
+<p style="text-align: center">
+<img src="images/image11.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+12. You will see the message when it is uploaded successfully.
+</p>
+<p style="text-align: center">
+<img src="images/image12.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+13. Next step is to upload the California tracts shapefile on the postgres
+database. It has the spatial information and we need a postGIS extension to work
+with the spatial data on postgres.
+</p>
+<p>
+In the DB Manager switch to ‘SQL Window’.
+</p>
+<p style="text-align: center">
+<img src="images/image13.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+ 14. In the query window, use the following command to add the postGIS extension
+to your postgres server. Click on the ‘Execute’ button to add the extension.
+</p>
+<pre><code>‘CREATE EXTENSION postgis’</code></pre>
+<p style="text-align: center">
+<img src="images/image14.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+15. Now we are ready to upload the ‘tl_2022_06_tract.shp’ to the server. We will
+directly add it to the server using ‘DB Manager’. Click on ‘Import layer/file’
+and browse to the ‘tl_2022_06_tract.shp’ layer and give the name
+‘california_2022_tract’. Let’s check options for adding a primary key and  a
+geometry column. We will check the option to convert fields to lowercase and add
+spatial index to the features for faster processing. Click ‘Ok’ to upload.
+</p>
+<p style="text-align: center">
+<img src="images/image15.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+16. You will see the ‘Import was Successful’ message as soon as it gets imported
+to the database. We can see the tables under the ‘public’ schema. Select the
+table from the schema and switch to the ‘Table’ window to view the table.
+Similarly you can switch to the ‘Preview’ window to get the view of the
+shapefile.
+</p>
+<p style="text-align: center">
+<img src="images/image16.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p style="text-align: center">
+<img src="images/image16(2).png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+17. We will run queries to join the total population column to the tracts
+shapefile using a common geoid. The ‘geoid’ field in the
+‘california_2022_tracts’ has unique ids for the tracts and the ‘geography’ field
+in the ‘california_population’ table has the long id for tracts within the US
+from which we can get the last 11 characters to match with the values in ‘geoid’
+field of the tracts table. We will apply queries given below to create a field
+named ‘geoid’ in the population table to have a common unique field.
+</p>
+<p>
+Add a new column ‘geoid_pop’ to the table ‘california_population’.
+</p>
+<pre><code>ALTER TABLE california_population ADD COLUMN geoid_pop VARCHAR(20);</code></pre>
+<p>
+Update the ‘geoid_pop’ column with the last 11 characters of the ‘geography’
+field starting from 10th position.
+</p>
+<pre><code>
+UPDATE california_population
+SET geoid_pop = SUBSTRING("geography"\
+				FROM CHAR_LENGTH("geography") - 10
+				FOR 11);
+</code></pre>							  
+							  
+<p style="text-align: center">
+<img src="images/image17.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+18. You will see the new column ‘geoid_pop’ is added in the
+‘california_population’ table.
+</p>
+<p style="text-align: center">
+<img src="images/image18.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+19. Now, we will create a new table named ‘california_tract_with_pop ’ by
+joining population information from california_population table to the tract
+table. Execute the query as you see below and refresh to see the new table added
+under the ‘public’ schema.
+</p>
+<p>
+The query selects all the columns from the ‘california_2022_tract’ table and
+selects "geographic area name" and "estimate!!total!!total population" columns
+from the ‘california_population’ table. We have assigned t1 and t2 to the input
+tables for ease in selecting the columns.
+</p>
+<pre><code>
+CREATE TABLE california_tract_with_pop AS
+SELECT t1.*,
+    t2."geographic area name",
+    t2."estimate!!total!!total population"
+FROM california_2022_tract t1
+JOIN california_population t2 ON t1.geoid = t2.geoid_pop
+</code></pre>
+	
+<p style="text-align: center">
+<img src="images/image19.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+20. You can view the table and right click to get the option to add it to the
+canvas.
+</p>
+<p style="text-align: center">
+<img src="images/image20.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+<p>
+21. The final table has geometries and total population for all tracts which can
+be used for further analysis or display such as creating a population density
+map. The full tutorial to create the map using QGIS is available at - <a
+href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</a>.
+</p>
+<p style="text-align: center">
+<img src="images/image21.png" width="" alt="alt_text" title="image_tooltip">
+</p>
+</div>
+
+</body>
+</html>
