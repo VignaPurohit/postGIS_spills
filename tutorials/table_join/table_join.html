@@ -27,25 +27,27 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
         }
 		/* Container to center and constrain the images */
-	    .image-container {
-	       display: flex;
-	       flex-wrap: wrap;
-	       gap: 10px; /* Space between images */
-	       max-width: 100%; /* Constrain the width */
-	       justify-content: center;
-	       padding: 10px;
-	     }
+		.image-container {
+		    display: flex;
+		    flex-wrap: wrap;
+		    gap: 10px;
+		    justify-content: center;
+		    max-width: 100%; /* Fit within container width */
+		    margin: 0 auto;
+		  }
 
-	     /* Styles for each image */
-	     .image-container img {
-	       max-width: 100%; /* Ensure it doesn't overflow the container */
-	       width: auto;
-	       height: auto;
-	       max-height: 300px; /* Adjust as needed */
-	       object-fit: contain; /* Maintain aspect ratio */
-	       border: 1px solid black; /* Thin black border */
-	       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
-	     }
+		  /* Image styling with responsive constraints */
+		  .image-container img {
+		    max-width: calc(33% - 20px); /* Limit width to one-third of container */
+		    max-height: 200px; /* Restrict height for better fit */
+		    width: auto;
+		    height: auto;
+		    object-fit: contain;
+		    border: 1px solid black;
+		    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+		    display: block;
+		    margin: auto;
+		  }
 
         /* Styling for pre-formatted text blocks */
         pre {
