@@ -20,7 +20,7 @@
         .container {
             max-width: 100ch; /* Reduced width for smaller margins */
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #fafafa;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -38,8 +38,8 @@
 
 		  /* Image styling with responsive constraints */
 		  .image-container img {
-		    max-width: calc(33% - 20px); /* Limit width to one-third of container */
-		    max-height: 200px; /* Restrict height for better fit */
+		    max-width: calc(75% - 5px); /* Limit width to one-third of container */
+		    max-height: 800px; /* Restrict height for better fit */
 		    width: auto;
 		    height: auto;
 		    object-fit: contain;
@@ -125,39 +125,16 @@ href="https://github.com/VignaPurohit/postgreSQL_spills/raw/refs/heads/main/tuto
 <h2>Workflow</h2>
 <p>
 	
-	
-<div class="image-container">
-    <img src="images/image1.png" alt="Step 1">
-    <img src="images/image2.png" alt="Step 2">
-    <img src="images/image3.png" alt="Step 3">
-    <img src="images/image4.png" alt="Step 4">
-    <img src="images/image5.png" alt="Step 5">
-    <img src="images/image6.png" alt="Step 6">
-    <img src="images/image7.png" alt="Step 7">
-    <img src="images/image8.png" alt="Step 8">
-    <img src="images/image9.png" alt="Step 9">
-    <img src="images/image10.png" alt="Step 10">
-    <img src="images/image11.png" alt="Step 11">
-    <img src="images/image12.png" alt="Step 12">
-    <img src="images/image13.png" alt="Step 13">
-    <img src="images/image14.png" alt="Step 14">
-    <img src="images/image15.png" alt="Step 15">
-    <img src="images/image16.png" alt="Step 16">
-    <img src="images/image16(2).png" alt="Step 16(2)">
-    <img src="images/image17.png" alt="Step 17">
-    <img src="images/image18.png" alt="Step 18">
-    <img src="images/image19.png" alt="Step 19">
-    <img src="images/image20.png" alt="Step 20">
-    <img src="images/image21.png" alt="Step 21">
-  </div>
-	
 1. We will upload the input data files to the server using QGIS. First, connect
 to the server using the PostgreSQL option in the browser panel. Right-click on
 PostgreSQL –> New Connection. You can skip this if already connected to the
 server.
 </p>
 <p style="text-align: center">
-<img src="images/image1.png" width="" alt="alt_text" title="image_tooltip">
+	
+  <div class="image-container">
+    <img src="images/image1.png" alt="Step 1" title="Step 1">
+  </div>
 </p>
 <p>
 2. You will see the dialogue where you need to fill in the details and
@@ -165,7 +142,9 @@ credentials to connect to the server. Fill all the required details and click
 ‘Ok’ to connect.
 </p>
 <p style="text-align: center">
-<img src="images/image2.png" width="" alt="alt_text" title="image_tooltip">
+    <div class="image-container">
+      <img src="images/image2.png" alt="Step 2" title="Step 2">
+    </div>
 </p>
 <p>
 3. Next step is to upload the population table and the tracts shapefile to the
@@ -174,7 +153,9 @@ detect the field type. Click on the ‘Data Source Manager’ icon and look for 
 ‘Delimited Text’ option as we are adding the CSV file.
 </p>
 <p style="text-align: center">
-<img src="images/image3.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image3.png" alt="Step 3" title="Step 3">
+  </div>
 </p>
 <p>
 4. Browse to the file and set the layer name as ‘california_population’ to
@@ -184,7 +165,9 @@ discard from the top. Click on ‘Add’ to see the ‘california_population lay
 loaded in QGIS.’
 </p>
 <p style="text-align: center">
-<img src="images/image4.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image4.png" alt="Step 4" title="Step 4">
+  </div>
 </p>
 <p>
 5. We have over 450 fields in the table. We just need the total estimated
@@ -193,35 +176,45 @@ that are not required. Go to Processing -> Toolbox and search for ‘Retain
 Fields’ tool.
 </p>
 <p style="text-align: center">
-<img src="images/image5.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image5.png" alt="Step 5" title="Step 5">
+  </div>
 </p>
 <p>
 6. Select the ‘california_population’ table as Input Layer and click on the …
 button for field selection.
 </p>
 <p style="text-align: center">
-<img src="images/image6.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image6.png" alt="Step 6" title="Step 6">
+  </div>
 </p>
 <p>
 7. Select the top three fields which are ‘Geography’, ‘Geographic Area Name’ and
 ‘Estimate!!Total!!Total Population’ and click ‘Ok’.
 </p>
 <p style="text-align: center">
-<img src="images/image7.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image7.png" alt="Step 7" title="Step 7">
+  </div>
 </p>
 <p>
 8. Keep the Output Layer field empty and click the ‘Run’ button to generate the
 temporary output with required fields.
 </p>
 <p style="text-align: center">
-<img src="images/image8.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image8.png" alt="Step 8" title="Step 8">
+  </div>
 </p>
 <p>
 9. Now, we will add this table to the postgres database. Go to Database - > DB
 Manager.
 </p>
 <p style="text-align: center">
-<img src="images/image9.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image9.png" alt="Step 9" title="Step 9">
+  </div>
 </p>
 <p>
 </p>
@@ -232,7 +225,9 @@ to the schema. Select the schema and click on ‘Import Layer/File’ to upload 
 ‘Retained Fields’ table.
 </p>
 <p style="text-align: center">
-<img src="images/image10.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image10.png" alt="Step 10" title="Step 10">
+  </div>
 </p>
 <p>
 11. You will see the window to upload the layer where you will select the input
@@ -240,13 +235,17 @@ layer, give the table name, create an ‘id’ field as primary key. Check the b
 to convert field names to lowercase and click ‘Ok’.
 </p>
 <p style="text-align: center">
-<img src="images/image11.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image11.png" alt="Step 11" title="Step 11">
+  </div>
 </p>
 <p>
 12. You will see the message when it is uploaded successfully.
 </p>
 <p style="text-align: center">
-<img src="images/image12.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image12.png" alt="Step 12" title="Step 12">
+  </div>
 </p>
 <p>
 13. Next step is to upload the California tracts shapefile on the postgres
@@ -257,7 +256,9 @@ with the spatial data on postgres.
 In the DB Manager switch to ‘SQL Window’.
 </p>
 <p style="text-align: center">
-<img src="images/image13.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image13.png" alt="Step 13" title="Step 13">
+  </div>
 </p>
 <p>
  14. In the query window, use the following command to add the postGIS extension
@@ -265,7 +266,9 @@ to your postgres server. Click on the ‘Execute’ button to add the extension.
 </p>
 <pre><code>‘CREATE EXTENSION postgis’</code></pre>
 <p style="text-align: center">
-<img src="images/image14.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image14.png" alt="Step 14" title="Step 14">
+  </div>
 </p>
 <p>
 15. Now we are ready to upload the ‘tl_2022_06_tract.shp’ to the server. We will
@@ -276,7 +279,9 @@ geometry column. We will check the option to convert fields to lowercase and add
 spatial index to the features for faster processing. Click ‘Ok’ to upload.
 </p>
 <p style="text-align: center">
-<img src="images/image15.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image15.png" alt="Step 15" title="Step 15">
+  </div>
 </p>
 <p>
 16. You will see the ‘Import was Successful’ message as soon as it gets imported
@@ -286,10 +291,14 @@ Similarly you can switch to the ‘Preview’ window to get the view of the
 shapefile.
 </p>
 <p style="text-align: center">
-<img src="images/image16.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image16.png" alt="Step 16" title="Step 16">
+  </div>
 </p>
 <p style="text-align: center">
-<img src="images/image16(2).png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image16(2).png" alt="Step 16" title="Step 16">
+  </div>
 </p>
 <p>
 17. We will run queries to join the total population column to the tracts
@@ -316,14 +325,18 @@ SET geoid_pop = SUBSTRING("geography"\
 </code></pre>							  
 							  
 <p style="text-align: center">
-<img src="images/image17.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image17.png" alt="Step 17" title="Step 17">
+  </div>
 </p>
 <p>
 18. You will see the new column ‘geoid_pop’ is added in the
 ‘california_population’ table.
 </p>
 <p style="text-align: center">
-<img src="images/image18.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image18.png" alt="Step 18" title="Step 18">
+  </div>
 </p>
 <p>
 19. Now, we will create a new table named ‘california_tract_with_pop ’ by
@@ -347,14 +360,18 @@ JOIN california_population t2 ON t1.geoid = t2.geoid_pop
 </code></pre>
 	
 <p style="text-align: center">
-<img src="images/image19.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image19.png" alt="Step 19" title="Step 19">
+  </div>
 </p>
 <p>
 20. You can view the table and right click to get the option to add it to the
 canvas.
 </p>
 <p style="text-align: center">
-<img src="images/image20.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image20.png" alt="Step 20" title="Step 20">
+  </div>
 </p>
 <p>
 21. The final table has geometries and total population for all tracts which can
@@ -363,7 +380,9 @@ map. The full tutorial to create the map using QGIS is available at - <a
 href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html">https://www.qgistutorials.com/en/docs/3/performing_table_joins.html</a>.
 </p>
 <p style="text-align: center">
-<img src="images/image21.png" width="" alt="alt_text" title="image_tooltip">
+  <div class="image-container">
+    <img src="images/image20.png" alt="Step 20" title="Step 20">
+  </div>
 </p>
 </div>
 
